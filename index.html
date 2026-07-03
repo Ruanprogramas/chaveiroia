@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistemas Inteligentes com IA | Eficiência Operacional</title>
+    <!-- Tailwind CSS para um design moderno e rápido -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Ícones Lucide para componentes visuais modernos -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#0B0F19',
+                            card: '#161F30',
+                            accent: '#2563EB',
+                            accentHover: '#1D4ED8',
+                            textMuted: '#94A3B8'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<!-- HEADER / MENU DE NAVEGAÇÃO -->
+<nav class="fixed top-0 left-0 right-0 bg-brand-dark/80 backdrop-blur-md border-b border-gray-800 z-50">
+        <div class="container mx-auto px-4 max-w-6xl h-16 flex items-center justify-between relative">
+            
+            <a href="#" class="text-xl font-black tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400 flex items-center gap-2">
+                <i data-lucide="key-round" class="w-5 h-5 text-blue-400"></i> Chaveiro IA
+            </a>
+            
+            <input type="checkbox" id="menu-toggle" class="peer hidden" />
+
+            <label for="menu-toggle" class="lg:hidden p-2 text-brand-textMuted hover:text-white cursor-pointer select-none z-50">
+                <i data-lucide="menu" class="w-6 h-6 peer-checked:hidden"></i>
+            </label>
+            
+            <div class="absolute lg:relative top-16 lg:top-0 left-0 right-0 lg:left-auto lg:right-auto 
+                        w-full lg:w-auto bg-brand-dark lg:bg-transparent border-b border-gray-800 lg:border-none
+                        flex-col lg:flex-row flex items-center gap-6 text-sm font-medium text-brand-textMuted
+                        p-6 lg:p-0 transition-all duration-300 ease-in-out
+                        opacity-0 pointer-events-none lg:opacity-100 lg:pointer-events-auto
+                        peer-checked:opacity-100 peer-checked:pointer-events-auto">
+                
+                <a href="#" class="hover:text-white transition-colors w-full lg:w-auto text-center py-2 lg:py-0">Início</a>
+                <a href="#contato" class="hover:text-white transition-colors w-full lg:w-auto text-center py-2 lg:py-0">Contato</a>
+                
+                <a href="https://api.whatsapp.com/send/?phone=5511933653442&text&type=phone_number&app_absent=0" class="w-full lg:w-auto inline-flex items-center justify-center px-4 py-2.5 bg-brand-accent hover:bg-brand-accentHover text-white text-xs font-bold rounded-lg transition-all duration-200 shadow-md shadow-blue-500/10">
+                    Garantir Meu Acesso
+                </a>
+            </div>
+
+        </div>
+    </nav>
+<body class="bg-brand-dark text-gray-100 font-sans antialiased">
+
+<header class="relative min-h-screen flex items-center justify-center overflow-hidden pt-24 pb-12 lg:py-0">
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-blue-900/40 via-brand-dark to-brand-dark -z-10"></div>
+        
+        <div class="container mx-auto px-4 max-w-6xl grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div class="space-y-6 text-center lg:text-left">
+                <div class="inline-flex items-center gap-2 px-3 py-1 bg-blue-500/10 border border-blue-500/20 text-blue-400 rounded-full text-sm font-medium">
+                    <i data-lucide="sparkles" class="w-4 h-4"></i>
+                </div>
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight text-white">
+                    Gere orçamentos em segundos por <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400">comando de voz</span>.
+                </h1>
+                <p class="text-lg md:text-xl text-brand-textMuted max-w-xl mx-auto lg:mx-0">
+                    Chega de perder tempo procurando preços de chaves, marcas e modelos. Fale ou digite o que o cliente precisa e nossa IA monta o orçamento instantaneamente para enviar no WhatsApp.
+                </p>
+                
+                <div class="p-4 bg-brand-dark/50 border border-blue-500/10 rounded-xl max-w-md mx-auto lg:mx-0 text-left space-y-2">
+                    <p class="text-xs font-semibold text-blue-400 uppercase tracking-wider">Experimente falar algo como:</p>
+                    <p class="text-sm italic text-brand-textMuted">"Quanto custa uma chave canivete Fiat Argo 2022?"</p>
+                </div>
+
+                <div class="pt-2">
+                    <a href="https://api.whatsapp.com/send/?phone=5511933653442&text=Ol%C3%A1%21+Gostaria de+saber+mais+sobre+como+multiplicar+as+vendas+do+meu+chaveiro.&type=phone_number&app_absent=0" class="inline-flex items-center justify-center w-full sm:w-auto px-8 py-4 bg-brand-accent hover:bg-brand-accentHover text-white font-bold rounded-xl shadow-lg shadow-blue-500/20 transition-all duration-300 transform hover:-translate-y-0.5 group">
+    Quero Multiplicar as Vendas do Meu Chaveiro
+    <i data-lucide="arrow-right" class="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1"></i>
+</a>
+                </div>
+            </div>
+            
+            <div class="relative flex justify-center items-center lg:mt-0 mt-8">
+                <div class="absolute w-72 h-72 bg-blue-500/20 rounded-full blur-3xl -z-10 animate-pulse"></div>
+                
+                <div class="w-full max-w-md bg-slate-900/90 border border-slate-800 rounded-2xl p-6 shadow-2xl relative overflow-hidden backdrop-blur-sm">
+                    <div class="flex items-center justify-between border-b border-slate-800 pb-4 mb-4">
+                        <div class="flex items-center gap-2">
+                            <span class="w-3 h-3 rounded-full bg-red-500"></span>
+                            <span class="w-3 h-3 rounded-full bg-yellow-500"></span>
+                            <span class="w-3 h-3 rounded-full bg-green-500"></span>
+                        </div>
+                        <span class="text-xs text-slate-500 font-mono">IA_Chaveiro_v1.0.exe</span>
+                    </div>
+
+                    <div class="space-y-4">
+                        <div class="bg-slate-950 p-4 rounded-xl border border-blue-500/30 relative">
+                            <div class="flex items-center gap-3 text-blue-400 mb-1">
+                                <i data-lucide="mic" class="w-4 h-4 animate-bounce"></i>
+                                <span class="text-xs font-semibold uppercase tracking-wider">Áudio Processado</span>
+                            </div>
+                            <p class="text-sm text-slate-200 font-medium">"Cópia de chave canivete para o Fiat Argo ano 2022 com desconto"</p>
+                        </div>
+
+                        <div class="flex justify-center text-slate-600">
+                            <i data-lucide="chevrons-down" class="w-5 h-5"></i>
+                        </div>
+
+                        <div class="bg-slate-950 p-4 rounded-xl border border-emerald-500/20 space-y-2">
+                            <div class="flex justify-between items-center text-xs text-slate-400">
+                                <span class="font-semibold text-emerald-400">✓ Item Identificado</span>
+                                <span>Qtd: 1</span>
+                            </div>
+                            <div class="text-sm text-white font-medium">Chave Canivete Fiat Argo (2022)</div>
+                            <div class="flex justify-between items-center pt-2 border-t border-slate-800 text-xs">
+                                <span class="text-slate-400">Desconto Aplicado</span>
+                                <span class="text-amber-400">- 10%</span>
+                            </div>
+                            <div class="flex justify-between items-center text-sm font-bold pt-1">
+                                <span class="text-slate-200">Total do Orçamento</span>
+                                <span class="text-emerald-400">R$ 380,00</span>
+                            </div>
+                        </div>
+
+                        <div class="w-full py-2.5 bg-emerald-600 rounded-lg text-center text-xs font-bold text-white flex items-center justify-center gap-2 opacity-90">
+                            <i data-lucide="share-2" class="w-3.5 h-3.5"></i> Enviar Orçamento via WhatsApp
+                        </div>
+                    </div>
+                </div>
+
+                <div class="absolute -bottom-6 -left-4 bg-slate-900 border border-slate-800 p-3 rounded-xl shadow-xl hidden sm:block max-w-[180px]">
+                    <div class="flex items-center gap-2 text-xs font-bold text-slate-300 mb-1.5">
+                        <i data-lucide="database" class="w-3.5 h-3.5 text-blue-400"></i> Categorias IA
+                    </div>
+                    <div class="flex flex-wrap gap-1">
+                        <span class="px-1.5 py-0.5 bg-slate-800 rounded text-[10px] text-slate-400">Carro</span>
+                        <span class="px-1.5 py-0.5 bg-slate-800 rounded text-[10px] text-slate-400">Casa</span>
+                        <span class="px-1.5 py-0.5 bg-slate-800 rounded text-[10px] text-slate-400">Cofre</span>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </header>
+            <!-- Interface de Alto Impacto (Demonstração Visual) -->
+            <div class="relative lg:mt-0">
+                <div class="absolute inset-0 bg-blue-500/10 blur-3xl rounded-full -z-10"></div>
+                <div class="border border-gray-800 rounded-2xl overflow-hidden shadow-2xl bg-brand-card/80 backdrop-blur-sm">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- SEÇÃO 3 PILARES -->
+<section class="py-24 bg-brand-dark/50 border-t border-gray-900">
+        <div class="container mx-auto px-4 max-w-6xl">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white">A IA aplicada puramente como facilitadora do seu chaveiro</h2>
+                <p class="text-brand-textMuted text-lg">Substitua a complexidade de catálogos infinitos por recursos inteligentes focados em agilizar o seu atendimento.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-brand-card p-8 rounded-2xl border border-gray-800/60 hover:border-blue-500/40 transition-all duration-300">
+                    <div class="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center text-blue-400 mb-6">
+                        <i data-lucide="mic" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-white">Pesquisa Inteligente por Voz</h3>
+                    <p class="text-brand-textMuted leading-relaxed">Gere orçamentos em segundos. Fale o modelo, ano do veículo ou o tipo de serviço residencial e a IA entende a intenção na hora.</p>
+                </div>
+                
+                <div class="bg-brand-card p-8 rounded-2xl border border-gray-800/60 hover:border-blue-500/40 transition-all duration-300">
+                    <div class="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center text-blue-400 mb-6">
+                        <i data-lucide="sparkles" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-white">Busca Semântica Avançada</h3>
+                    <p class="text-brand-textMuted leading-relaxed">Esqueça códigos difíceis. O sistema possui correção de digitação automática e busca inteligente por categorias (carro, casa, cofre, etc.).</p>
+                </div>
+                
+                <div class="bg-brand-card p-8 rounded-2xl border border-gray-800/60 hover:border-blue-500/40 transition-all duration-300">
+                    <div class="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center text-blue-400 mb-6">
+                        <i data-lucide="bar-chart-3" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-white">Dashboard de Resultados</h3>
+                    <p class="text-brand-textMuted leading-relaxed">Acompanhe seu faturamento, ticket médio, produtos mais vendidos e saiba quais são as pesquisas mais frequentes do seu balcão.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- SEÇÃO COMPARATIVA & PERFORMANCE -->
+<section class="py-24 bg-brand-dark">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <div class="text-center mb-16">
+                <span class="text-blue-500 text-sm font-semibold uppercase tracking-wider">Performance e Velocidade</span>
+                <h2 class="text-3xl md:text-4xl font-bold mt-2 text-white">Busca Manual vs. Pesquisa com IA</h2>
+                <p class="text-brand-textMuted mt-4">Reduza drasticamente o tempo de atendimento do seu balcão e feche serviços muito mais rápido.</p>
+            </div>
+
+            <div class="bg-brand-card p-6 md:p-8 rounded-2xl border border-gray-800 space-y-6">
+                <div>
+                    <div class="flex justify-between text-sm font-medium mb-2 text-slate-300">
+                        <span>Procurar preço, marca e modelo em catálogos manuais </span>
+                        <span class="text-red-400 font-mono">Vários minutos</span>
+                    </div>
+                    <div class="w-full bg-gray-900 h-4 rounded-full overflow-hidden">
+                        <div class="bg-red-500/60 h-full rounded-full" style="width: 100%"></div>
+                    </div>
+                </div>
+                <div>
+                    <div class="flex justify-between text-sm font-medium mb-2 text-slate-300">
+                        <span>Gerar orçamento instantâneo com Pesquisa Inteligente (Voz/Texto) </span>
+                        <span class="text-green-400 font-mono">Em segundos</span>
+                    </div>
+                    <div class="w-full bg-gray-900 h-4 rounded-full overflow-hidden">
+                        <div class="bg-gradient-to-r from-blue-500 to-green-400 h-full rounded-full transition-all duration-1000" style="width: 5%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TABELA CARACTERÍSTICAS VS BENEFÍCIOS -->
+<section class="py-24 bg-brand-card/30 border-t border-b border-gray-900">
+        <div class="container mx-auto px-4 max-w-5xl">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-white">O Impacto Prático na Sua Operação</h2>
+                <p class="text-brand-textMuted mt-2">Chega de termos técnicos complexos. Entenda o que muda no dia a dia do seu chaveiro.</p>
+            </div>
+
+            <div class="hidden md:block overflow-x-auto rounded-xl border border-gray-800 bg-brand-card">
+                <table class="w-full text-left border-collapse">
+                    <thead>
+                        <tr class="border-b border-gray-800 bg-brand-dark/50">
+                            <th class="p-4 font-semibold text-sm tracking-wider text-brand-textMuted">Recurso do Sistema</th>
+                            <th class="p-4 font-semibold text-sm tracking-wider text-brand-textMuted">Como Funciona</th>
+                            <th class="p-4 font-semibold text-sm tracking-wider text-blue-400">Impacto Comercial no Balcão</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-800/50">
+                        <tr>
+                            <td class="p-4 text-sm font-mono text-gray-300">Módulo de IA por Voz e Texto</td>
+                            <td class="p-4 text-sm text-brand-textMuted">Interpreta comandos naturais, corrigindo erros de digitação e marcas automaticamente</td>
+                            <td class="p-4 text-sm font-semibold text-white">"Gere preços de chaves automotivas complexas ou residenciais em 3 segundos"</td>
+                        </tr>
+                        <tr>
+                            <td class="p-4 text-sm font-mono text-gray-300">Gerador de Orçamentos Ágil</td>
+                            <td class="p-4 text-sm text-brand-textMuted">Seleciona itens, adiciona descontos e monta um arquivo PDF profissional pronto</td>
+                            <td class="p-4 text-sm font-semibold text-white">"Envie a proposta direto no WhatsApp do cliente antes que ele saia da sua loja"</td>
+                        </tr>
+                        <tr>
+                            <td class="p-4 text-sm font-mono text-gray-300">Dashboard de Indicadores</td>
+                            <td class="p-4 text-sm text-brand-textMuted">Acompanha faturamento, ticket médio e lista os produtos e buscas mais frequentes</td>
+                            <td class="p-4 text-sm font-semibold text-white">"Saiba quais chaves e serviços dão mais lucro e nunca falte estoque no balcão"</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            </div>
+    </section>
+
+            <!-- Layout Alternativo para Mobile -->
+            <div class="md:hidden space-y-4">
+                <div class="bg-brand-card p-5 rounded-xl border border-gray-800">
+                    <span class="text-xs font-mono text-blue-400 block mb-1">Integração LLM</span>
+                    <p class="font-bold text-white mb-2">"Converse com seus leads sem robôs engessados"</p>
+                    <p class="text-xs text-brand-textMuted">Interações inteligentes sem roteiros mecânicos ou travados.</p>
+                </div>
+                <div class="bg-brand-card p-5 rounded-xl border border-gray-800">
+                    <span class="text-xs font-mono text-blue-400 block mb-1">Pipelines Python</span>
+                    <p class="font-bold text-white mb-2">"Elimine 4 horas diárias de preenchimento de planilhas"</p>
+                    <p class="text-xs text-brand-textMuted">Migração automática, padronizada e limpa de qualquer volume de dados.</p>
+                </div>
+                <div class="bg-brand-card p-5 rounded-xl border border-gray-800">
+                    <span class="text-xs font-mono text-blue-400 block mb-1">Dashboard Preditivo</span>
+                    <p class="font-bold text-white mb-2">"Saiba exatamente onde investir no próximo trimestre"</p>
+                    <p class="text-xs text-brand-textMuted">Previsões automáticas geradas diretamente dos dados históricos de vendas.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTEMUNHO DE IMPACTO -->
+  <section class="py-24 bg-brand-dark">
+        <div class="container mx-auto px-4 max-w-4xl text-center">
+            <div class="inline-flex p-3 bg-blue-500/10 rounded-full text-blue-400 mb-6">
+                <i data-lucide="quote" class="w-8 h-8"></i>
+            </div>
+            <blockquote class="text-xl md:text-2xl font-medium italic text-gray-200 leading-relaxed max-w-3xl mx-auto">
+                "Transformar consultas complexas em orçamentos instantâneos utilizando IA e linguagem natural é o caminho para reduzir o tempo de atendimento e multiplicar a produtividade do setor."
+            </blockquote>
+            <div class="mt-6">
+                <p class="font-bold text-white text-base">Ruan Trindade e João Petrini</p>
+                <p class="text-sm text-brand-textMuted">Idealizadores do Projeto | Visão 2026</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FORMULÁRIO DE CAPTAÇÃO / FINAL -->
+<section id="contato" class="py-24 bg-gradient-to-b from-brand-dark to-brand-card border-t border-gray-900">
+        <div class="container mx-auto px-4 max-w-5xl">
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                
+                <div class="space-y-6 text-center lg:text-left">
+                    <div>
+                        <span class="text-blue-500 text-sm font-semibold uppercase tracking-wider">Fale Conosco</span>
+                        <h2 class="text-3xl md:text-4xl font-bold mt-2 text-white">Pronto para transformar seu Chaveiro?</h2>
+                        <p class="text-brand-textMuted mt-4 max-w-md mx-auto lg:mx-0">
+                            Preencha o formulário para garantir o acesso à próxima geração de tecnologia para o mercado de chaveiros. Nossa equipe entrará em contato em breve.
+                        </p>
+                    </div>
+
+                    <div class="space-y-4 pt-4 max-w-sm mx-auto lg:mx-0 text-left">
+                        <div class="flex items-center gap-4 p-4 bg-brand-card/50 border border-gray-800 rounded-xl">
+                            <div class="w-10 h-10 rounded-lg bg-emerald-500/10 flex items-center justify-center text-emerald-400 shrink-0">
+                                <i data-lucide="phone" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-brand-textMuted font-medium">WhatsApp Comercial</p>
+                                <p class="text-sm font-bold text-white">(00) 99999-9999</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-4 p-4 bg-brand-card/50 border border-gray-800 rounded-xl">
+                            <div class="w-10 h-10 rounded-lg bg-blue-500/10 flex items-center justify-center text-blue-400 shrink-0">
+                                <i data-lucide="mail" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-brand-textMuted font-medium">E-mail de Suporte</p>
+                                <p class="text-sm font-bold text-white">contato@seuchaveiroia.com</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-4 p-4 bg-brand-card/50 border border-gray-800 rounded-xl">
+                            <div class="w-10 h-10 rounded-lg bg-indigo-500/10 flex items-center justify-center text-indigo-400 shrink-0">
+                                <i data-lucide="code" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-brand-textMuted font-medium">Idealização do Projeto</p>
+                                <p class="text-sm font-bold text-slate-300">Ruan Trindade </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+             <div class="w-full max-w-md mx-auto">
+    <!-- ATENÇÃO: Troque o 'SEU_ACCESS_KEY_AQUI' pela chave que você vai pegar no passo abaixo -->
+    <form action="https://api.web3forms.com/submit" method="POST" class="bg-brand-dark/80 p-8 rounded-2xl border border-gray-800 space-y-5 shadow-xl">
+        
+        <!-- Chave de acesso oculta -->
+        <input type="hidden" name="access_key" value="492143be-0f0f-4c13-a04e-46b7ce2cf332">
+        
+        <!-- Redirecionamento após o envio (Opcional: coloque a URL da sua página de agradecimento) -->
+        <!-- <input type="hidden" name="redirect" value="https://seusite.com/obrigado"> -->
+
+        <div>
+            <label class="block text-sm font-medium mb-1 text-gray-300">Seu nome</label>
+            <input type="text" name="nome" required placeholder="Ex: Seu Nome" class="w-full bg-brand-card border border-gray-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-blue-500 transition-colors">
+        </div>
+        
+        <div>
+            <label class="block text-sm font-medium mb-1 text-gray-300">WhatsApp do Chaveiro</label>
+            <input type="tel" name="whatsapp" required placeholder="(00) 99999-9999" class="w-full bg-brand-card border border-gray-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-blue-500 transition-colors">
+        </div>
+        
+        <div>
+            <label class="block text-sm font-medium mb-1 text-gray-300">E-mail</label>
+            <input type="email" name="email" required placeholder="seuemail@provedor.com" class="w-full bg-brand-card border border-gray-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-blue-500 transition-colors">
+        </div>
+        
+        <button type="submit" class="w-full py-4 bg-brand-accent hover:bg-brand-accentHover text-white font-bold rounded-xl transition-colors shadow-lg shadow-blue-500/10">
+            Solicitar Demonstração Gratuita
+        </button>
+    </form>
+</div>
+            </div>
+            
+        </div>
+    </section>
+    <!-- Bloco de Obrigado (Inicia oculto com 'hidden') -->
+    <div id="thankYouMessage" class="hidden bg-brand-dark/80 p-8 rounded-2xl border border-gray-800 text-center space-y-4 shadow-xl animate-fade-in">
+        <div class="mx-auto flex items-center justify-center h-16 w-16 rounded-full bg-green-500/10 text-green-500">
+            <svg class="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+        </div>
+        <h3 class="text-2xl font-bold text-white">Solicitação Recebida!</h3>
+        <p class="text-gray-400 text-sm leading-relaxed">
+            Obrigado pelo interesse. Em breve entraremos em contato através do WhatsApp ou e-mail fornecido para liberar sua demonstração.
+        </p>
+    </div>
+</div>
+
+<!-- Script para processar o envio e alternar as telas -->
+<script>
+    document.getElementById('demoForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const form = e.target;
+        const btnText = document.getElementById('btnText');
+        const submitBtn = document.getElementById('submitBtn');
+        const thankYouMessage = document.getElementById('thankYouMessage');
+        
+        // Feedback visual de carregamento
+        btnText.innerText = "Enviando...";
+        submitBtn.disabled = true;
+        submitBtn.classList.add('opacity-50', 'cursor-not-allowed');
+
+        const formData = new FormData(form);
+
+        fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => {
+            if (response.ok) {
+                // Ocorreu tudo bem: esconde o form e mostra o obrigado
+                form.classList.add('hidden');
+                thankYouMessage.classList.remove('hidden');
+            } else {
+                alert('Ops! Algo deu errado. Por favor, tente novamente.');
+                resetButton();
+            }
+        })
+        .catch(error => {
+            alert('Erro de conexão. Verifique sua internet.');
+            resetButton();
+        });
+
+        function resetButton() {
+            btnText.innerText = "Solicitar Demonstração Gratuita";
+            submitBtn.disabled = false;
+            submitBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+        }
+    });
+</script>
+
+    <!-- RODAPÉ -->
+    <footer class="py-8 bg-brand-card text-center border-t border-gray-900 text-xs text-brand-textMuted">
+        <div class="container mx-auto px-4 space-y-2">
+            <p>&copy; 2026 Sistemas IA. Todos os direitos reservados.</p>
+            <p>Contato: contato@sistemaslA.com | www.sistemaslA.com</p>
+        </div>
+    </footer>
+
+    <!-- Inicialização dos ícones Lucide -->
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
