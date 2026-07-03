@@ -27,37 +27,94 @@
     </script>
 </head>
 <!-- HEADER / MENU DE NAVEGAÇÃO -->
-<nav class="fixed top-0 left-0 right-0 bg-brand-dark/80 backdrop-blur-md border-b border-gray-800 z-50">
-        <div class="container mx-auto px-4 max-w-6xl h-16 flex items-center justify-between relative">
+<!-- HEADER / MENU DE NAVEGAÇÃO -->
+    <nav class="fixed top-0 left-0 right-0 bg-brand-dark/80 backdrop-blur-md border-b border-gray-800 z-50">
+        <div class="container mx-auto px-4 max-w-6xl h-16 flex items-center justify-between">
             
+            <!-- Logotipo com o nome que escolheu -->
             <a href="#" class="text-xl font-black tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400 flex items-center gap-2">
                 <i data-lucide="key-round" class="w-5 h-5 text-blue-400"></i> Chaveiro IA
             </a>
             
-            <input type="checkbox" id="menu-toggle" class="peer hidden" />
-
-            <label for="menu-toggle" class="lg:hidden p-2 text-brand-textMuted hover:text-white cursor-pointer select-none z-50">
-                <i data-lucide="menu" class="w-6 h-6 peer-checked:hidden"></i>
-            </label>
-            
-            <div class="absolute lg:relative top-16 lg:top-0 left-0 right-0 lg:left-auto lg:right-auto 
-                        w-full lg:w-auto bg-brand-dark lg:bg-transparent border-b border-gray-800 lg:border-none
-                        flex-col lg:flex-row flex items-center gap-6 text-sm font-medium text-brand-textMuted
-                        p-6 lg:p-0 transition-all duration-300 ease-in-out
-                        opacity-0 pointer-events-none lg:opacity-100 lg:pointer-events-auto
-                        peer-checked:opacity-100 peer-checked:pointer-events-auto">
-                
-                <a href="#" class="hover:text-white transition-colors w-full lg:w-auto text-center py-2 lg:py-0">Início</a>
-                <a href="#planos" class="hover:text-white transition-colors w-full lg:w-auto text-center py-2 lg:py-0">Planos</a>
-                <a href="#contato" class="hover:text-white transition-colors w-full lg:w-auto text-center py-2 lg:py-0">Contato</a>
-                
-                <a href="https://api.whatsapp.com/send/?phone=5511933653442&text&type=phone_number&app_absent=0" class="w-full lg:w-auto inline-flex items-center justify-center px-4 py-2.5 bg-brand-accent hover:bg-brand-accentHover text-white text-xs font-bold rounded-lg transition-all duration-200 shadow-md shadow-blue-500/10">
+            <!-- Links para Desktop (Somente telas grandes) -->
+            <div class="hidden lg:flex items-center gap-6 text-sm font-medium text-brand-textMuted">
+                <a href="#" class="hover:text-white transition-colors">Início</a>
+                <a href="#planos" class="hover:text-white transition-colors">Planos</a>
+                <a href="#contato" class="hover:text-white transition-colors">Contato</a>
+                <a href="https://api.whatsapp.com/send/?phone=5511933653442&text&type=phone_number&app_absent=0" class="inline-flex items-center justify-center px-4 py-2.5 bg-brand-accent hover:bg-brand-accentHover text-white text-xs font-bold rounded-lg transition-all duration-200 shadow-md shadow-blue-500/10">
                     Garantir Meu Acesso
                 </a>
             </div>
 
+            <!-- Botão Hamburger (Apenas para Mobile) -->
+            <button id="menu-btn" class="lg:hidden text-gray-400 hover:text-white p-2 focus:outline-none">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
         </div>
     </nav>
+
+    <!-- OVERLAY (Fundo escuro que bloqueia a tela e fecha ao clicar fora) -->
+    <div id="sidebar-overlay" class="fixed inset-0 bg-black/60 opacity-0 pointer-events-none transition-opacity duration-300 z-40"></div>
+
+    <!-- SIDEBAR LATERAL (MOBILE - DESLIZA DA DIREITA) -->
+    <div id="sidebar" class="fixed top-0 right-0 bottom-0 w-72 bg-brand-dark border-l border-gray-800 transform translate-x-full transition-transform duration-300 ease-in-out z-50 flex flex-col p-6">
+        <!-- Topo da Sidebar -->
+        <div class="flex items-center justify-between mb-8">
+            <span class="text-sm font-bold text-gray-400 uppercase tracking-wider">Chaveiro IA</span>
+            <button id="close-btn" class="text-gray-400 hover:text-white p-2">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+        </div>
+
+        <!-- Links da Sidebar -->
+        <div class="flex flex-col gap-6 text-base font-medium">
+            <a href="#" class="sidebar-link text-gray-300 hover:text-white py-2 border-b border-gray-800/50 flex items-center gap-3">
+                <i data-lucide="home" class="w-4 h-4 text-blue-400"></i> Início
+            </a>
+            <a href="#planos" class="sidebar-link text-gray-300 hover:text-white py-2 border-b border-gray-800/50 flex items-center gap-3">
+                <i data-lucide="credit-card" class="w-4 h-4 text-blue-400"></i> Planos
+            </a>
+            <a href="#contato" class="sidebar-link text-gray-300 hover:text-white py-2 border-b border-gray-800/50 flex items-center gap-3">
+                <i data-lucide="mail" class="w-4 h-4 text-blue-400"></i> Contato
+            </a>
+            <div class="pt-4">
+                <a href="https://api.whatsapp.com/send/?phone=5511933653442&text&type=phone_number&app_absent=0" class="sidebar-link block text-center w-full py-3 bg-brand-accent hover:bg-brand-accentHover text-white text-sm font-bold rounded-xl shadow-lg shadow-blue-500/20 transition-all duration-200">
+                    Garantir Meu Acesso
+                </a>
+            </div>
+        </div>
+    </div>
+
+        </div>
+    </nav>
+
+    <!-- SCRIPT DE CONTROLE DA SIDEBAR -->
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const closeBtn = document.getElementById('close-btn');
+        const sidebar = document.getElementById('sidebar');
+        const overlay = document.getElementById('sidebar-overlay');
+        const sidebarLinks = document.querySelectorAll('.sidebar-link');
+
+        function openSidebar() {
+            sidebar.classList.remove('translate-x-full');
+            overlay.classList.remove('opacity-0', 'pointer-events-none');
+        }
+
+        function closeSidebar() {
+            sidebar.classList.add('translate-x-full');
+            overlay.classList.add('opacity-0', 'pointer-events-none');
+        }
+
+        menuBtn.addEventListener('click', openSidebar);
+        closeBtn.addEventListener('click', closeSidebar);
+        overlay.addEventListener('click', closeSidebar);
+
+        // Fecha automaticamente a barra ao clicar em qualquer um dos links
+        sidebarLinks.forEach(link => {
+            link.addEventListener('click', closeSidebar);
+        });
+    </script>
 <body class="bg-brand-dark text-gray-100 font-sans antialiased">
 
 <header class="relative min-h-screen flex items-center justify-center overflow-hidden pt-24 pb-12 lg:py-0">
